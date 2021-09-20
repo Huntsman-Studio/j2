@@ -6,29 +6,27 @@
 <style>
     .navbar {
         overflow: hidden;
-        padding: 0;
-        margin: 0;
+        height: 5vh;
         background-color: #333;
         font-family: Arial, Helvetica, sans-serif;
     }
 
     .navbar a {
-        float: left;
-        font-size: 16px;
-        color: white;
+        font-size: 22px;
+        color: mistyrose;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
 
     .dropdown {
-        float: left;
+        float: center;
         overflow: hidden;
     }
 
     .dropdown .dropbtn {
         cursor: pointer;
-        font-size: 16px;  
+        font-size: 22px;  /* Font Size in the Topbar */
         border: none;
         outline: none;
         color: white;
@@ -47,7 +45,6 @@
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
 
@@ -73,14 +70,14 @@
 
 <div class="navbar">
   <div class="dropdown">
-    <button class="dropbtn" onclick="myFunction()">Κολεξιόν</button>
-    <button class="dropbtn" onclick="myFunction()">Προσφορές</button>
-    <button class="dropbtn" onclick="myFunction()">Σχετικά με εμάς</button>
+    <a class="dropbtn" onclick="myFunction()">Κολεξιόν</a>
+    <a class="dropbtn" onclick="myFunction()">Προσφορές</a>
+    <a class="dropbtn" onclick="myFunction()">Σχετικά με εμάς</a>
     <div class="dropdown-content" id="myDropdown">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </div>
   </div> 
 </div>
 
