@@ -1,129 +1,112 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        * {
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
             box-sizing: border-box;
         }
-
-        body {
-            margin: 0;
+        body{
+            background: brown;
         }
-
-        .navbar {
-            overflow: hidden;
-            background-color: black;
-            font-family: Arial, Helvetica, sans-serif;
+        .wrapper{
+            width: 1170px;
+            margin: 50px auto;
         }
-
-        .navbar a {
-            float: left;
-            font-size: 16px;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
-
-        .dropdown .dropbtn {
-            font-size: 16px;  
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font: inherit;
-            margin: 0;
-        }
-
-        .navbar a:hover, .dropdown:hover .dropbtn {
-            cursor: pointer;
-            background-color: black;
-        }
-
-        .dropdown-content {
-            display: none;
+        nav{
             position: absolute;
-            background-color: black;
-            width: 100%;
-            left: 0;
-            z-index: 1;
-        }
-
-        .dropdown-content .header {
             background: black;
-            height: 1000px;
-            color: white;
+            font-size: 22px;
         }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Create three equal columns that floats next to each other */
-        .column {
-            /* float: left; */
-            /* width: 33%; */
-            display: inline-block;
-            position: flex;
+        nav > ul{
+            position: relative;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            align-items: center;
             justify-content: center;
+            width: 1170px;
+            height: 80px;
+            margin: 0 auto;
             padding: 10px;
-            background-color: black;
-            height: 600px;
+            /* border-bottom: 1px solid #333; */
         }
-
-        .column a {
-            float: none;
-            height: 350px;
-            width: 350px;
-            color: white;
-            padding: 16px;
-            text-decoration: none;
+        nav  a{
             display: block;
-            text-align: left;
+            color: white;
+            text-decoration: none;
         }
-
-        .column:hover{
-            border: 1px white;
+        nav a:hover{
+            background: #333;
+            transition: background 550ms;
         }
-
-        .column a:hover {
-            background-color: #333;
+        nav ul li{
+            list-style: none;
+            transition: 0.5s;
         }
-
+        ul img{
+            width: 30%;
+        }
+        nav > ul > li > a{
+            padding: 15px 25px;
+        }
+        nav ul>li.dropdown1 > a::after{
+            position: relative;
+            float: right;
+            content: '';
+            margin-left: 10px;
+            margin-top: 8px;
+        }
+        nav ul.menu-area-1{
+            padding: 40px 40px 0 40px;
+            background: red;
+            text-align: center;
+            z-index: 1;
+            position: absolute;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            flex-wrap: wrap;
+            width: 1170px;
+            height: 800px;
+            top: -9999px;
+            left: 0;
+        }
+        nav ul li:active ul.menu-area-1{
+            top: 100%;
+        }
     </style>
 </head>
 <body>
-
-<div class="navbar">
-  <div class="dropdown">
-    <button class="dropbtn">Κολεξιόν</button>
-    <div class="dropdown-content">
-      <div class="header">
-          <div class="row">
-            <div class="column">
-                <a href="#">Μπλούζες</a>
-            </div>
-            <div class="column">
-                <a href="#">Παντελόνια</a>
-            </div>
-            <div class="column">
-                <a href="#">Με σχέδιο</a>
-            </div>
-        </div>
-      </div> 
-      <button>Κλείσιμο</button> 
+    <div class="wrapper">
+        <nav>
+            <ul>
+                <li class="dropdown1">
+                    <a href="#">Κολεξιόν</a>
+                    <ul class="menu-area-1">  
+                        <li><a href="#">Blah blah blah...</a></li> <!--   <img src=".." alt="...">   -->
+                        <li><a href="#">Blah blah blah...</a></li>
+                        <li><a href="#">Blah blah blah...</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Προσφορές</a>
+                </li>
+                <li>
+                    <a href="#">Σχετικά με εμάς</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-  </div> 
-</div>
-
 </body>
 </html>
-
-<!-- https://www.youtube.com/watch?v=wlCPOwBr7no -->
