@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
         *{
@@ -43,7 +44,7 @@
         }
         nav a:hover{
             background: #333;
-            transition: background 550ms;
+            transition: background 500ms;
         }
         nav ul li{
             list-style: none;
@@ -76,12 +77,10 @@
             flex-wrap: wrap;
             width: 1170px;
             height: 800px;
-            top: -9999px;
+            top: 100%;
             left: 0;
             /* border-top: 2px solid #333; */
-        }
-        nav ul li:active ul.menu-area-1{
-            top: 100%;
+            display: none;
         }
         nav ul.menu-area-1 li{
             position: relative;
@@ -93,17 +92,38 @@
             justify-content: center;
         }
     </style>
+
+    <script>
+        // Check if element is hidden or visible and toggle
+        $(document).ready(function(){
+            $('#a-toggle').click(function(){
+                if ($('.menu-area-1').is(":hidden")){
+                    $('.menu-area-1').show();  
+                }else{
+                    $('.menu-area-1').hide();  
+                }
+            });
+        });
+        // Close button
+        $(document).ready(function(){
+            $('#btn-toggle').click(function(){
+                $('.menu-area-1').hide();  
+            });
+        });
+    </script>
 </head>
+
 <body>
     <div class="wrapper">
         <nav>
             <ul>
                 <li class="dropdown1">
-                    <a href="#">Κολεξιόν</a>
+                    <a href="#" id="a-toggle">Κολεξιόν</a>
                     <ul class="menu-area-1">  
                         <li><a href="#">Blah blah blah...</a></li> <!--   <img src=".." alt="...">   -->
                         <li><a href="#">Blah blah blah...</a></li>
                         <li><a href="#">Blah blah blah...</a></li>
+                        <button id="btn-toggle" class="btn">Κλείσιμο</button>
                     </ul>
                 </li>
                 <li>
