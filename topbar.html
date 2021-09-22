@@ -68,7 +68,7 @@
             margin-top: 8px;
         }
         nav ul.menu-area-1{
-            padding: 40px 40px 0 40px;
+            /* padding: 40px 40px 0 40px; */
             background: black;
             text-align: center;
             z-index: 1;
@@ -78,12 +78,15 @@
             display: -ms-flex;
             display: -o-flex;
             display: flex;
-            flex-wrap: wrap;
             width: 1170px;
             height: 800px;
             top: 100%;
             left: 0;
-            /* border-top: 2px solid #333; */
+            flex-direction: row;
+            column-gap: 80px;
+            align-items: baseline;
+            justify-content: center;
+            padding: 100px;
             display: none;
         }
         nav ul.menu-area-1 li{
@@ -93,7 +96,11 @@
             display: -ms-flex;
             display: -o-flex;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+        }
+        .btn-box{
+            position: relative;
         }
     </style>
 
@@ -115,15 +122,9 @@
         // Close button
         $(document).ready(function(){
             $('#btn-toggle').click(function(){
-                if ($('.menu-area-1').is(":hidden")){
-                    $('.menu-area-1').show();
-                    $("nav").css("background-color","black");
-                    $('nav a').css("color","white");
-                }else{
                     $('.menu-area-1').hide();
                     $("nav").css("background-color","transparent");
                     $('nav a').css("color","black");
-                }
             });
         });
     </script>
@@ -135,12 +136,16 @@
             <ul>
                 <li class="dropdown1">
                     <a href="#" id="a-toggle">Κολεξιόν</a>
-                    <ul class="menu-area-1">  
-                        <li><a href="#">Blah blah blah...</a></li> <!--   <img src=".." alt="...">   -->
-                        <li><a href="#">Blah blah blah...</a></li>
-                        <li><a href="#">Blah blah blah...</a></li>
-                        <button id="btn-toggle" class="btn">Κλείσιμο</button>
-                    </ul>
+                    <div class="show-cont"> <!-- Here -->
+                        <ul class="menu-area-1">  
+                            <li><a href="#">Blah blah blah...</a></li> <!--   <img src=".." alt="...">   -->
+                            <li><a href="#">Blah blah blah...</a></li>
+                            <li><a href="#">Blah blah blah...</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-box">
+                         <button id="btn-toggle" class="btn">Κλείσιμο</button>
+                    </div>
                 </li>
                 <li>
                     <a href="#">Προσφορές</a>
