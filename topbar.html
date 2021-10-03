@@ -22,7 +22,7 @@
         }
         nav{
             position: absolute;
-            background: transparent;
+            background-color: transparent;
             font-size: 22px;
         }
         nav > ul{
@@ -68,7 +68,6 @@
             margin-top: 8px;
         }
         nav ul.menu-area-1{
-            /* padding: 40px 40px 0 40px; */
             background: black;
             text-align: center;
             z-index: 1;
@@ -89,18 +88,25 @@
             padding: 100px;
             display: none;
         }
-        nav ul.menu-area-1 li{
+        nav ul.menu-area-1 img{
             position: relative;
             display: -webkit-flex;
             display: -moz-flex;
             display: -ms-flex;
             display: -o-flex;
-            display: flex;
-            flex-direction: column;
+            display: inline-flex;
+            flex-direction: row;
             justify-content: center;
+            padding: 2em .75em;
+            width: 350px;
+            height: 350px;
+        }
+        nav ul.menu-area-1 li a{
+            
         }
         .btn-box{
             position: relative;
+            padding-top: 5%;
         }
     </style>
 
@@ -138,13 +144,13 @@
                     <a href="#" id="a-toggle">Κολεξιόν</a>
                     <div class="show-cont"> <!-- Here -->
                         <ul class="menu-area-1">  
-                            <li><a href="#">Blah blah blah...</a></li> <!--   <img src=".." alt="...">   -->
-                            <li><a href="#">Blah blah blah...</a></li>
-                            <li><a href="#">Blah blah blah...</a></li>
+                            <li><a href="#"><img src="./tshirts.jpg" alt="Μπλούζες">Μπλούζες</a></li> <!--   <img src=".." alt="...">   -->
+                            <li><a href="#"><img src="./pants.jpg" alt="Παντελόνια">Παντελόνια</a></li>
+                            <li><a href="#"><img src="./tshirts2.jpg" alt="Με Σχέδιο">Με Σχέδιο</a></li>
+                            <div class="btn-box">
+                                <button id="btn-toggle" class="btn">Κλείσιμο</button>
+                            </div>
                         </ul>
-                    </div>
-                    <div class="btn-box">
-                         <button id="btn-toggle" class="btn">Κλείσιμο</button>
                     </div>
                 </li>
                 <li>
