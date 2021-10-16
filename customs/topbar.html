@@ -6,161 +6,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            box-sizing: border-box;
-        }
-        body{
-            background: rgb(229, 229, 229);
-        }
-        .wrapper{
-            width: 1170px;
-            margin: 50px auto;
-        }
-        nav{
-            position: absolute;
-            background-color: transparent;
-            font-size: 22px;
-        }
-        nav > ul{
-            position: relative;
-            display: -webkit-flex;
-            display: -moz-flex;
-            display: -ms-flex;
-            display: -o-flex;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 1170px;
-            height: 80px;
-            margin: 0 auto;
-            padding: 10px;
-            /* border-bottom: 2px solid #333; */
-        }
-        nav  a{
-            display: block;
-            color: black;
-            text-decoration: none;
-        }
-        nav a:hover{
-            background: rgb(91, 91, 91);
-            color: white !important;
-            /* transition: background 550ms;  */
-        }
-        nav ul li{
-            list-style: none;
-            transition: 0.5s;
-        }
-        ul img{
-            width: 30%;
-        }
-        nav > ul > li > a{
-            padding: 15px 25px;
-        }
-        nav ul>li.dropdown1 > a::after{
-            position: relative;
-            float: right;
-            content: '';
-            margin-left: 10px;
-            margin-top: 8px;
-        }
-        nav ul.menu-area-1{
-            background: black;
-            text-align: center;
-            z-index: 1;
-            position: absolute;
-            display: -webkit-flex;
-            display: -moz-flex;
-            display: -ms-flex;
-            display: -o-flex;
-            display: flex;
-            width: 1170px;
-            height: 800px;
-            top: 100%;
-            left: 0;
-            flex-direction: row;
-            column-gap: 80px;
-            align-items: baseline;
-            justify-content: center;
-            padding: 100px;
-            display: none;
-        }
-        nav ul.menu-area-1 img{
-            position: relative;
-            display: -webkit-flex;
-            display: -moz-flex;
-            display: -ms-flex;
-            display: -o-flex;
-            display: inline-flex;
-            flex-direction: row;
-            justify-content: center;
-            padding: 2em .75em;
-            width: 350px;
-            height: 350px;
-        }
-        nav ul.menu-area-1 li a{
-            
-        }
-        .btn-box{
-            position: relative;
-            padding-top: 5%;
-        }
-    </style>
-
     <script>
         // Check if element is hidden or visible and toggle
-        $(document).ready(function(){
-            $('#a-toggle').click(function(){
-                if ($('.menu-area-1').is(":hidden")){
-                    $('.menu-area-1').show();
-                    $("nav").css("background-color","black");
-                    $('nav a').css("color","white");
-                }else{
-                    $('.menu-area-1').hide();
-                    $("nav").css("background-color","transparent");
-                    $('nav a').css("color","black");
+        $(document).ready( function(){
+            $('#collection').click( function(){
+                if($('.submenu').is(':hidden')){
+                    $('.submenu').removeClass('hide');
+                    $('#collection').addClass('active');
+                    $('#sales').addClass('act');
+                    $('#about-us').addClass('act');
+                    $('.nav').css('background-color','black');
+                } else{
+                    $('.submenu').addClass('hide');
+                    $('#collection').removeClass('active');
+                    $('#sales').removeClass('act');
+                    $('#about-us').removeClass('act');
+                    $('.nav').css('background-color','transparent');
                 }
             });
         });
         // Close button
         $(document).ready(function(){
-            $('#btn-toggle').click(function(){
-                    $('.menu-area-1').hide();
-                    $("nav").css("background-color","transparent");
-                    $('nav a').css("color","black");
+            $('.close').click(function(){
+                $('.submenu').addClass('hide');
+                $('#collection').removeClass('active');
+                $('#sales').removeClass('act');
+                $('#about-us').removeClass('act');
+                $('.nav').css('background-color','transparent');
             });
         });
     </script>
+
+    <style>
+        nav{
+            display: grid;
+            justify-items: center;
+        }
+        /* Navigation  */
+        div.nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+        }
+        /* Navigation items */
+        ul.menu{
+            list-style-type: none;
+        }
+        /* li */
+        ul.menu > li{
+            float: left;
+            font-size: 18px;
+            color: #000;
+            padding: 13px 33px 13px 33px;
+            border: 2px solid transparent;
+        }
+        /* hover */
+        ul.menu > li:hover{
+            border: 2px solid black;
+            border-radius: 5pt;
+            cursor: pointer;
+        }
+        /* active li */
+        ul.menu > li.active{
+            background-color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            color: #000;
+            padding: 13px 33px 13px 33px;
+            border: 2px solid #fff;
+        }
+        ul.menu > li.act{
+            color: #fff;
+        }
+        /* hover */
+        ul.menu > li.act:hover{
+            border: 2px solid #fff;
+        }
+
+        /* submenu */
+        div.submenu{
+            display: grid;
+            /* flex-direction: row; */
+            justify-content: center;
+            /* align-items: center; */
+            background-color: black;
+            width: 80%;
+            height: 80vh;
+            padding-bottom: 42px;
+        }
+        div.hide{
+            display: none;
+        }
+        /* submenu items */
+        ul.submenu{
+            list-style-type: none;
+        }
+        /* li */
+        ul.submenu > li{
+            float: left;
+            gap: 32px;
+            padding: 8px;
+            border: 2px solid transparent;
+        }
+        /* hover */
+        ul.submenu > li:hover{
+            border: 2px solid white;
+            border-radius: 5pt;
+            cursor: pointer;
+        }
+
+        /* tees item */
+        div#tees{
+            width: 292px;
+            background-image: url('http://j-2.gr/wp-content/uploads/2021/10/tshirts-scaled.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding-top: 280px;
+            padding-bottom: 16px;
+            color: #fff;
+            font-size: 22px;
+        }
+
+        /* close button */
+        div.close{
+            align-self: flex-end;
+            text-align: center;
+        }
+        /* button */
+        div.close > button{
+            font-size: 18px;
+            padding: 13px 57px 13px 57px;
+            color: #fff;
+            border-radius: 5pt;
+            border: 2px solid #e5e5e5;
+            background-color: transparent;
+            font-weight: bold;
+        }
+        /* hover */
+        div.close > button:hover{
+            cursor: pointer;
+            background-color: #e5e5e5;
+            color: #000;
+        }
+        /* focus */
+        div.close > button:focus{
+            background-color: #dedede;
+            border-inline: 2px solid black;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <nav>
-            <ul>
-                <li class="dropdown1">
-                    <a href="#" id="a-toggle">Κολεξιόν</a>
-                    <div class="show-cont"> <!-- Here -->
-                        <ul class="menu-area-1">  
-                            <li><a href="#"><img src="./tshirts.jpg" alt="Μπλούζες">Μπλούζες</a></li> <!--   <img src=".." alt="...">   -->
-                            <li><a href="#"><img src="./pants.jpg" alt="Παντελόνια">Παντελόνια</a></li>
-                            <li><a href="#"><img src="./tshirts2.jpg" alt="Με Σχέδιο">Με Σχέδιο</a></li>
-                            <div class="btn-box">
-                                <button id="btn-toggle" class="btn">Κλείσιμο</button>
-                            </div>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Προσφορές</a>
-                </li>
-                <li>
-                    <a href="#">Σχετικά με εμάς</a>
-                </li>
+    <nav>
+        <div class="nav">
+            <ul class="menu">
+                <li id="collection" style="margin-right: 32px;">Κολεξιόν</li>
+                <li id="sales" style="margin-right: 32px;">Προσφορές</li>
+                <li id="about-us">Σχετικά με εμάς</li>
             </ul>
-        </nav>
-    </div>
+        </div>
+        <div class="submenu hide">
+            <ul class="submenu">
+                <li style="margin-right: 32px;"><div id="tees">Μπλούζες</div></li>
+                <li style="margin-right: 32px;"><div id="tees">Παντελόνια</div></li>
+                <li style="margin-right: 32px;"><div id="tees">Πουκάμισα</div></li>
+            </ul>
+            <div class="close">
+                <button class="close"><div>Κλείσιμο</div></button>
+            </div>
+        </div>
+    </nav>
 </body>
 </html>
