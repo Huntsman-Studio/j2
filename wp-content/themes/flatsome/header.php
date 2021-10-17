@@ -147,6 +147,7 @@
 			}
 			div.active{
 				background-color: #000;
+				margin-top: 18px;
 
 			}
 			/* Navigation items */
@@ -195,6 +196,8 @@
 				display: grid;
 				justify-items: center;
 				position: fixed;
+				top: 0;
+				left: 0
 				margin-top: 0px;
 				z-index: 10000;
 				width: 100%;
