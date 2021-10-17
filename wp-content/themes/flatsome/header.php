@@ -149,11 +149,6 @@
 				background-color: #000;
 
 			}
-			/* hr */
-			hr.line{
-				border: 1px solid #333333;
-				width: 80%;
-			}
 			/* Navigation items */
 			ul.menu{
 				list-style-type: none;
